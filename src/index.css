@@ -22,6 +22,15 @@
   touch-action: manipulation;
 }
 
+/* Prevent text selection on buttons and interactive elements */
+button, [role="button"], a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
 /* Full height for mobile */
 html, body, #root {
   height: 100%;
