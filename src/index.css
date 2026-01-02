@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* Custom CSS variables for consistent theming */
+:root {
+  --punch-color: theme(colors.red.500);
+  --punch-bg: theme(colors.red.600);
+  --kick-color: theme(colors.blue.500);
+  --kick-bg: theme(colors.blue.600);
+}
+
+/* Prevent text selection during training */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Prevent zoom on double-tap for mobile */
+* {
+  touch-action: manipulation;
+}
+
+/* Full height for mobile */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth background transitions for action feedback */
+.action-flash {
+  transition: background-color 150ms ease-out;
+}
+
+/* Large action text animation */
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.action-pulse {
+  animation: pulse-scale 0.3s ease-in-out;
+}
+
+/* Countdown number animation */
+@keyframes countdown-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.countdown-number {
+  animation: countdown-pop 0.5s ease-out;
+}
+
+/* Action display pulse animation */
+@keyframes action-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-action-pulse {
+  animation: action-pulse 0.5s ease-in-out infinite;
+}
+
+/* Action text scale animation */
+@keyframes action-scale {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-action-scale {
+  animation: action-scale 0.3s ease-out;
+}
+
+/* Shimmer effect for progress bar */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
